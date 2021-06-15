@@ -1,3 +1,4 @@
+import { MensagemModule } from './../componentes/mensagem/mensagem.module';
 import { AutenticacaoModule } from './../autenticacao/autenticacao.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -9,7 +10,13 @@ import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [HomeComponent, LoginComponent],
-  imports: [CommonModule, FormsModule, HomeRoutingModule, AutenticacaoModule],
+  imports: [
+    CommonModule,
+    FormsModule,
+    HomeRoutingModule,
+    MensagemModule,
+    AutenticacaoModule,
+  ],
   exports: [HomeComponent],
 })
 export class HomeModule {}
