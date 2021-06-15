@@ -3,5 +3,8 @@
     "tslint:recommended",
     "tslint-plugin-prettier",
     "tslint-config-prettier"
-  ]
+  ],
+  "rules": {
+    "no-empty": false
+  }
 }
