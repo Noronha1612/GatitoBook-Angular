@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
       })
       .subscribe({
         next: () => this._router.navigateByUrl('animais'),
-        error: () => alert('Usuário ou senha inválido(a)'),
+        error: () => alert('Usuário ou senha incorreto(a)'),
       });
   }
 }
