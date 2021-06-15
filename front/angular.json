@@ -27,7 +27,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles/styles.css",
+              "src/styles/bootstrap.min.css",
+              "src/styles/fontawesome.min.css"
             ],
             "scripts": []
           },
@@ -94,9 +96,9 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css",
-              "./node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "./node_modules/font-awesome/css/font-awesome.css"
+              "src/styles/styles.css",
+              "src/styles/bootstrap.min.css",
+              "src/styles/fontawesome.min.css"
             ],
             "scripts": []
           }
