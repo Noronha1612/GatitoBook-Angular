@@ -1,0 +1,94 @@
+<h4 class="text-center">Registre-se e mostre seu pet ao mundo</h4>
+
+<form class="form mt-4" [formGroup]="novoUsuarioForm" (submit)="cadastrar()">
+  <div class="form-group">
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.required &&
+        novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="E-Mail obrigatório"
+    ></app-mensagem>
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('email')?.errors?.email &&
+        novoUsuarioForm.get('email')?.touched
+      "
+      mensagem="E-Mail incorreto"
+    ></app-mensagem>
+    <input
+      placeholder="E-Mail"
+      type="text"
+      class="form-control"
+      formControlName="email"
+      autocomplete="email"
+    />
+  </div>
+  <div class="form-group">
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('fullName')?.errors &&
+        novoUsuarioForm.get('fullName')?.touched
+      "
+      mensagem="Nome completo incorreto"
+    ></app-mensagem>
+    <input
+      placeholder="Nome Completo"
+      type="text"
+      class="form-control"
+      formControlName="fullName"
+      autocomplete="name"
+    />
+  </div>
+  <div class="form-group">
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('userName')?.errors?.minusculo &&
+        novoUsuarioForm.get('userName')?.touched
+      "
+      mensagem="Nome de usuário deve ser em letra minuscula"
+    ></app-mensagem>
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('userName')?.errors?.usuario &&
+        novoUsuarioForm.get('userName')?.touched
+      "
+      mensagem="Usuário já existe"
+    ></app-mensagem>
+    <input
+      placeholder="Nome de usuário"
+      type="text"
+      class="form-control"
+      formControlName="userName"
+      autocomplete="username"
+    />
+  </div>
+  <div class="form-group">
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.get('password')?.errors &&
+        novoUsuarioForm.get('password')?.touched
+      "
+      mensagem="Senha obrigatória"
+    ></app-mensagem>
+    <input
+      placeholder="Senha"
+      type="password"
+      class="form-control"
+      formControlName="password"
+      autocomplete="current-password"
+    />
+    <app-mensagem
+      *ngIf="
+        novoUsuarioForm.errors?.usuarioSenhaIguais &&
+        novoUsuarioForm.get('password')?.touched &&
+        novoUsuarioForm.get('userName')?.touched
+      "
+      mensagem="Usuário e senha devem ser diferentes"
+    ></app-mensagem>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-block">Cadastrar</button>
+</form>
+
+<p>Já é um usuário? <a routerLink="">Faça login</a></p>
