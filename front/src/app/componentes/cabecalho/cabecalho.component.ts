@@ -15,8 +15,7 @@ export class CabecalhoComponent {
     private readonly _router: Router
   ) {}
 
-  logout() {
-    this._usuarioService.logout();
-    this._router.navigateByUrl('');
+  logout(): void {
+    return this._usuarioService.logout();
   }
 }
